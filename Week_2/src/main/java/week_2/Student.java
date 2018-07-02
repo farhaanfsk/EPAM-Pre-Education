@@ -1,20 +1,36 @@
 package week_2;
 
 import java.util.Comparator;
-
-public class Student{
-	private String firstName;
-	private String lastName;
-	private int idNo;
-	private int year;
-	private String department;
-	Student(String firstName, String lastName, int idNo, int year, String department){
-		this.firstName=firstName;
-		this.lastName=lastName;
-		this.idNo=idNo;
-		this.year=year;
-		this.department=department;
-	}
+/**.
+* Student Bean class
+* @author  Farhaan Ahmed
+* @version 1.0
+*/
+public class Student {
+  /**.
+   * Student first name
+   */
+  private String firstName;
+  /**.
+   * Student last name
+   */
+  private String lastName;
+  /**.
+   * Student identification number
+   */
+  private int idNo;
+  /**.
+   * Student study year
+   */
+  private int year;
+  /**.
+   * Student department
+   */
+  private String department;
+  /**.
+   * Getter and Setter methods for each variables
+   * @return
+   */
 	public String getFirstName() {
 		return firstName;
 	}
@@ -45,7 +61,9 @@ public class Student{
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	
+	/**.
+	 * Student First Name comparator method
+	 */
 	public static Comparator<Student> StuFNameComparator = new Comparator<Student>() {
 		public int compare(Student s1, Student s2) {
 			   String StudentName1 = s1.getFirstName().toUpperCase();
@@ -55,19 +73,23 @@ public class Student{
 			   return StudentName1.compareTo(StudentName2);
 		}
 	};
+	/**.
+   * Student last Name comparator method
+   */
 	public static Comparator<Student> StuLNameComparator = new Comparator<Student>() {
 		public int compare(Student s1, Student s2) {
 			   String Name1 = s1.getLastName().toUpperCase();
 			   String Name2 = s2.getLastName().toUpperCase();
 
-			   //ascending order
 			   return Name1.compareTo(Name2);
 		}
-	};	
+	};
+	/**.
+   * Student ID comparator method
+   */
 	public static Comparator<Student> StuIdComparator = new Comparator<Student>() {
 		public int compare(Student s1, Student s2) {
-			   
-			   return s1.getIdNo()-s2.getIdNo();
+			   return s1.getIdNo() - s2.getIdNo();
 		}
 	};
 }
